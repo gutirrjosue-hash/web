@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página que aparecerá en la pestaña del navegador -->
+    <title>En Memoria de [Nombre del Difunto]</title>
+    
+    <!-- Carga de Tailwind CSS para los estilos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Carga de las fuentes: Playfair Display (títulos) y Cormorant Garamond (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilos personalizados para aplicar las fuentes */
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .font-cormorant {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Aplicar Cormorant Garamond al cuerpo del texto por defecto */
+        body {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        /* Estilo para el reproductor de audio con tema claro */
+        audio {
+            width: 100%;
+            max-width: 400px;
+            margin-top: 1rem;
+            border-radius: 9999px; /* Bordes redondeados */
+            border: 1px solid #cbd5e1; /* Borde de color gris-claro (slate-300) */
+        }
+
+        /* Estilos para el modal (ventana emergente) de la galería */
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-700 antialiased">
+
+    <!-- Contenedor principal -->
+    <div class="container mx-auto px-4 py-8 md:py-16 max-w-6xl">
+
+        <!-- 1. Sección de Encabezado (Hero) -->
+        <header class="text-center">
+            <!-- Imagen principal del difunto (URL actualizada en el paso anterior) -->
+            <img src="./Imagenes/FotoPerfil.jpeg" 
+                 alt="Foto de [Nombre]" 
+                 class="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto mb-6 border-4 border-amber-500 shadow-xl object-cover">
+            
+            <!-- Nombre del difunto usando Playfair Display (Vistoso) -->
+            <h1 class="font-playfair text-4xl md:text-6xl font-extrabold text-gray-900 mb-2">
+                Dr. Felix Ramiro Nina Huanca
+            </h1>
+            
+            <!-- Fechas usando Cormorant Garamond (Clásico) -->
+            <p class="font-cormorant text-xl md:text-2xl text-amber-600 font-light mb-4">
+                [Fecha de Nacimiento] – [Fecha de Fallecimiento]
+            </p>
+            
+            <!-- Frase conmemorativa usando Cormorant Garamond -->
+            <p class="font-cormorant text-lg md:text-xl text-gray-600 italic max-w-3xl mx-auto">
+                "Una vida que tocó a tantas otras. Un amor que vivirá para siempre en nuestros corazones."
+            </p>
+        </header>
+
+        <!-- 2. Sección de Música (¡AUTOPLAY AÑADIDO!) -->
+        <section class="text-center mt-12 md:mt-16">
+            <!-- Título de sección usando Playfair Display (Vistoso y elegante) -->
+            <h2 class="font-playfair text-3xl font-bold text-amber-600 mb-4">Música para el Recuerdo</h2>
+            <p class="text-gray-500 mb-4">Una canción, para recordarle con cariño.</p>
+            <div class="flex justify-center">
+                <!-- ********** PENDIENTE DE URL ********** -->
+                <!-- ATENCIÓN: Se ha añadido 'autoplay loop'. La mayoría de los navegadores pueden bloquear el autoplay si el audio tiene sonido. -->
+                <!-- REEMPLAZA "URL_PENDIENTE.mp3" con tu enlace DIRECTO al archivo MP3/WAV. -->
+                <audio controls autoplay loop>
+                    <source src="./Audios/WhatsApp Audio 2025-10-29 at 21.56.41.mpeg" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
+        </section>
+
+        <!-- 3. Sección de Biografía / Historia de Vida -->
+        <section class="mt-16 bg-white rounded-lg shadow-xl p-6 md:p-10 max-w-4xl mx-auto">
+            <!-- Título de sección usando Playfair Display -->
+            <h2 class="font-playfair text-3xl font-bold text-center text-amber-600 mb-6">
+                Recordando su Vida
+            </h2>
+            <!-- Texto de la biografía usando Cormorant Garamond -->
+            <div class="font-cormorant space-y-4 text-gray-700 leading-relaxed text-left text-lg">
+                <p>
+                    Aquí puedes escribir una breve biografía o una historia sobre la vida de la persona. Habla de sus pasiones, 
+                    sus logros, y lo que le hacía especial. 
+                </p>
+                <p>
+                    Por ejemplo: [Nombre] nació en [Lugar] y desde joven mostró una increíble pasión por [Hobby o Pasión]. 
+                    Dedicó su vida a [Profesión o Causa], pero su verdadera alegría era su familia.
+                    Siempre será recordado por su [Cualidad 1] y su inagotable [Cualidad 2].
+                </p>
+                <p>
+                    Este espacio es para honrar su legado y las huellas imborrables que dejó en todos los que le conocieron.
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. Galería de Fotos (Imágenes de Drive actualizadas) -->
+        <section class="mt-16">
+            <!-- Título de sección usando Playfair Display -->
+            <h2 class="font-playfair text-3xl font-bold text-center text-amber-600 mb-8">
+                Galería de Momentos
+            </h2>
+            
+            <!-- Contenedor de la galería con rejilla responsive -->
+            <div id="gallery" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
+                
+                <!-- Fotos de la galería actualizadas con tus URLs de Drive -->
+                
+                <!-- Foto 1 -->
+                <div>
+                    <img src="https://drive.google.com/uc?export=download&id=1VJb96GWX0mLzS8FBrUNQalCCBiuK_cDt" 
+                         alt="Foto de la Galería 1" 
+                         class="gallery-img w-full h-48 md:h-64 object-cover rounded-lg shadow-lg cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-amber-500/40">
+                </div>
+                <!-- Foto 2 -->
+                <div>
+                    <img src="https://drive.google.com/uc?export=download&id=1Y_cueY7Eg0o-4PBSE7byacyzf4zGBD-J" 
+                         alt="Foto de la Galería 2" 
+                         class="gallery-img w-full h-48 md:h-64 object-cover rounded-lg shadow-lg cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-amber-500/40">
+                </div>
+                <!-- Foto 3 -->
+                <div>
+                    <img src="https://drive.google.com/uc?export=download&id=19llUsgM9P5rqXtjkBOewcS-Mnqw-_8SS" 
+                         alt="Foto de la Galería 3" 
+                         class="gallery-img w-full h-48 md:h-64 object-cover rounded-lg shadow-lg cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-amber-500/40">
+                </div>
+                <!-- Foto 4 -->
+                <div>
+                    <img src="https://drive.google.com/uc?export=download&id=1bxLl7TFC7hKVVlu4U4Y5DsOx8sxCXsI9" 
+                         alt="Foto de la Galería 4" 
+                         class="gallery-img w-full h-48 md:h-64 object-cover rounded-lg shadow-lg cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-amber-500/40">
+                </div>
+                <!-- Espacios adicionales para fotos de la galería (placeholders) -->
+                <div>
+                    <img src="https://placehold.co/400x400/64748B/E2E8F0?text=Espacio+para+Foto+5" 
+                         alt="Descripción de la foto 5" 
+                         class="gallery-img w-full h-48 md:h-64 object-cover rounded-lg shadow-lg cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-amber-500/40">
+                </div>
+                <div>
+                    <img src="https://placehold.co/400x400/64748B/E2E8F0?text=Espacio+para+Foto+6" 
+                         alt="Descripción de la foto 6" 
+                         class="gallery-img w-full h-48 md:h-64 object-cover rounded-lg shadow-lg cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-amber-500/40">
+                </div>
+                <div>
+                    <img src="https://placehold.co/400x400/64748B/E2E8F0?text=Espacio+para+Foto+7" 
+                         alt="Descripción de la foto 7" 
+                         class="gallery-img w-full h-48 md:h-64 object-cover rounded-lg shadow-lg cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-amber-500/40">
+                </div>
+                <div>
+                    <img src="https://placehold.co/400x400/64748B/E2E8F0?text=Espacio+para+Foto+8" 
+                         alt="Descripción de la foto 8" 
+                         class="gallery-img w-full h-48 md:h-64 object-cover rounded-lg shadow-lg cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-amber-500/40">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4.5. Botones de Enlace Externo -->
+        <section class="mt-8 text-center max-w-4xl mx-auto">
+            <h3 class="font-playfair text-xl font-semibold text-gray-800 mb-4">Ver Álbumes Completos</h3>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                
+                <!-- Botón VER FOTOS -->
+                <a href="https://www.youtube.com/watch?v=XKuEAK53rws" target="_blank"
+                   class="font-cormorant text-lg font-bold py-3 px-8 rounded-full border-2 border-amber-600 text-amber-600 bg-white transition duration-300 ease-in-out hover:bg-amber-600 hover:text-white shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-opacity-50">
+                    VER FOTOS
+                </a>
+
+                <!-- Botón VER VIDEOS -->
+                <a href="https://www.youtube.com/watch?v=ELvX7WUEsk8" target="_blank"
+                   class="font-cormorant text-lg font-bold py-3 px-8 rounded-full border-2 border-amber-600 text-amber-600 bg-white transition duration-300 ease-in-out hover:bg-amber-600 hover:text-white shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-opacity-50">
+                    VER VIDEOS
+                </a>
+            </div>
+        </section>
+
+
+        <!-- 5. Sección de Video (Pendiente de URL) -->
+        <section class="mt-16">
+            <!-- Título de sección usando Playfair Display -->
+            <h2 class="font-playfair text-3xl font-bold text-center text-amber-600 mb-8">
+                Video Conmemorativo
+            </h2>
+            
+            <!-- Contenedor del video para mantener la proporción 16:9 -->
+            <div class="max-w-4xl mx-auto bg-white rounded-lg overflow-hidden shadow-xl">
+                <div class="aspect-w-16 aspect-h-9">
+                    <!-- ********** PENDIENTE DE URL ********** -->
+                    <!-- REEMPLAZA "URL_PENDIENTE.mp4" con tu enlace DIRECTO a un archivo .mp4 o con un IFRAME de YouTube. -->
+                    <video controls class="w-full h-full object-cover">
+                        <source src="URL_PENDIENTE.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Sección de Mensajes y Tributos -->
+        <section class="mt-16">
+            <!-- Título de sección usando Playfair Display -->
+            <h2 class="font-playfair text-3xl font-bold text-center text-amber-600 mb-8">
+                Mensajes de Cariño
+            </h2>
+            <div class="max-w-3xl mx-auto space-y-8">
+                
+                <!-- Mensaje 1 con fuente Cormorant Garamond y borde ámbar -->
+                <div class="bg-white p-6 rounded-lg shadow-xl border-l-4 border-amber-500">
+                    <blockquote class="font-cormorant text-xl italic text-gray-700">
+                        "Nunca olvidaremos tu sonrisa y tu generosidad. Dejas un vacío inmenso, pero también un legado de amor 
+                        que nos guiará siempre. Descansa en paz, querido amigo."
+                    </blockquote>
+                    <p class="font-playfair text-right mt-4 text-amber-600 font-semibold">— Familia [Apellido]</p>
+                </div>
+                
+                <!-- Mensaje 2 con fuente Cormorant Garamond y borde ámbar -->
+                <div class="bg-white p-6 rounded-lg shadow-xl border-l-4 border-amber-500">
+                    <blockquote class="font-cormorant text-xl italic text-gray-700">
+                        "Gracias por cada lección, cada abrazo y cada momento compartido. Fuiste el mejor [padre/madre/abuelo/etc.] 
+                        del mundo. Te querremos siempre."
+                    </blockquote>
+                    <p class="font-playfair text-right mt-4 text-amber-600 font-semibold">— Tus [Hijos/Nietos/etc.]</p>
+                </div>
+
+                <!-- Puedes añadir más mensajes copiando el bloque <div> anterior -->
+
+            </div>
+        </section>
+
+        <!-- 7. Pie de Página -->
+        <footer class="text-center mt-16 md:mt-24 mb-8">
+            <p class="font-cormorant text-gray-600 text-lg">
+                Siempre en nuestros corazones.
+            </p>
+            <p class="font-cormorant text-gray-500 text-sm mt-2">
+                [Lugar] | [Año]
+            </p>
+        </footer>
+
+    </div> <!-- Fin del contenedor principal -->
+
+    <!-- Modal para ver imágenes (inicialmente oculto) -->
+    <div id="modal" class="modal fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50 hidden opacity-0" onclick="closeModal()">
+        <img id="modal-img" src="" alt="Vista ampliada" class="max-w-full max-h-full rounded-lg shadow-2xl">
+        <span id="close-modal" class="absolute top-4 right-6 text-white text-5xl font-bold cursor-pointer">&times;</span>
+    </div>
+
+    <!-- Script para la galería de imágenes (sin cambios) -->
+    <script>
+        const galleryImages = document.querySelectorAll('.gallery-img');
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+        const closeModalBtn = document.getElementById('close-modal');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', function(e) {
+                e.stopPropagation(); // Evita que el clic se propague al fondo del modal
+                modalImg.src = this.src; // Pone la imagen clickeada en el modal
+                modal.classList.remove('hidden'); // Muestra el modal
+                setTimeout(() => modal.classList.add('opacity-100'), 20); // Inicia la transición
+            });
+        });
+
+        function closeModal() {
+            modal.classList.remove('opacity-100'); // Inicia la transición de salida
+            setTimeout(() => modal.classList.add('hidden'), 250); // Oculta el modal después de la transición
+        }
+
+        // Cierra el modal al hacer clic en el botón de cerrar
+        closeModalBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            closeModal();
+        });
+        
+        // Cierra el modal al hacer clic fuera de la imagen
+        modal.addEventListener('click', function(e) {
+            if (e.target.id === 'modal') {
+                closeModal();
+            }
+        });
+        
+        // Evita que el modal se cierre al hacer clic en la imagen misma
+        modalImg.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    </script>
+
+</body>
+</html>
